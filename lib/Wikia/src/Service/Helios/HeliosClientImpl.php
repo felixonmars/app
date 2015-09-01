@@ -54,10 +54,10 @@ class HeliosClientImpl implements HeliosClient
 		// Add client_id and client_secret to the GET data.
 		$getParams['client_id'] = $this->clientId;
 		$getParams['client_secret'] = $this->clientSecret;
-		
+
 		// Request URI pre-processing.
 		$uri = "{$this->baseUri}{$resourceName}?" . http_build_query($getParams);
-		
+
 		// Request options pre-processing.
 		$options = [
 			'method'          => 'GET',
@@ -91,10 +91,12 @@ class HeliosClientImpl implements HeliosClient
 
 		$this->status = $request->status;
 
-		$output = json_decode( $request->getContent() );
+		$response = $request->getContent();
+		$output = json_decode( $response );
 
 		if ( !$output ) {
-			throw new ClientException ( 'Invalid response.' );
+			$data[ "response" ] = $response;
+			throw new ClientException ( 'Invalid Helios response.', 0, null, $data );
 		}
 
 		return $output;
