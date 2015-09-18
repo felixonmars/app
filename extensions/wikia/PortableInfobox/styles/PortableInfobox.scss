@@ -149,22 +149,7 @@
 }
 
 // **********  Styles for tabber  ********** //
-.infobox-tabber {
-	.active {
-		.image-tabber {
-			display: block;
-		}
-
-		.tabber-pagination {
-			background-color: black;
-			border-color: black;
-		}
-	}
-
-	.image-tabber {
-		display: none;
-	}
-
+.pi-images {
 	.pi-caption {
 		bottom: 40px;
 		color: white;
@@ -177,26 +162,74 @@
 			text-decoration: none;
 		}
 	}
+}
+.slider_wrapper {
+	overflow: hidden;
+	position:relative;
+	top:auto;
+}
+.image_slider {
+	position: relative;
+	height: auto;
+	list-style: none;
+	overflow: hidden;
+	float: left;
+	/*Chrome default padding for ul is 40px */
+	padding:0px;
+	margin:0px;
 
-	.navigation {
-		margin: 10px;
-	}
-
-	.next {
-		right: 10px;
-		position: absolute;
-	}
-
-	.tabber-pagination {
-		border: 1px solid #000;
-		border-radius: 5px;
-		cursor: pointer;
-		display: inline-block;
-		height: 8px;
-		width: 8px;
+	figure {
+		position: relative;
+		float: left;
 	}
 }
+.arrow {
+	position:absolute;
+	top: 80px;
+	height: 50px;
+	width: 30px;
+	opacity: 0.6;
 
+	&:hover {
+		opacity: 0.9;
+	}
+}
+.prev {
+	background: #000 url(/extensions/wikia/ApiDocs/files/arrow-01.png) no-repeat center;
+	left: 0px;
+}
+
+.next {
+	background: #000 url(/extensions/wikia/ApiDocs/files/arrow-01.png) no-repeat center;
+	right: 0px;
+}
+
+.pi-pager{
+	/* firefox has different center method. this doesn't work for fire fox */
+	/* not in the center*/
+	padding:0px;
+	position:relative;
+	height:50px;
+	margin:auto;
+
+	li {
+		padding: 0px;
+		margin: 6px;
+		width: 12px;
+		height: 12px;
+		border: 2px solid white;
+		color: white;
+		list-style: none;
+		opacity: 0.6;
+		float: left;
+		border-radius: 6px;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}
 
 // **********  Overwrite default infobox styles for STACKED layout type  ********** //
 

@@ -1,25 +1,26 @@
-<div class="infobox-tabber">
-	{{#images}}
-		<div class="infobox-tabber-item">
-	<figure class="pi-item pi-image image-tabber">
-		<a href="{{url}}" class="image image-thumbnail{{#isVideo}} video video-thumbnail small{{/isVideo}}"
-		   title="{{alt}}">
-			<img src="{{thumbnail}}" class="pi-image-thumbnail" alt="{{alt}}" width="{{{width}}}" height="{{{height}}}"
-				 data-{{media-type}}-key="{{name}}" data-{{media-type}}-name="{{name}}"/>
-			{{#isVideo}}
-			{{#duration}}
-			<span class="duration" itemprop="duration">{{duration}}</span>
-			{{/duration}}
-			<span class="play-circle"></span>
-			{{/isVideo}}
-			{{#caption}}<figcaption class="pi-item-spacing pi-caption">{{{caption}}}</figcaption>{{/caption}}
-		</a>
-	</figure>
-	<div class="tabber-pagination"></div>
+<div class="pi-item pi-images">
+	<div class="slider_wrapper">
+		<div class="image_slider">
+			{{#images}}
+			<figure class="pi-item pi-image image-tabber">
+					<a href="{{url}}" class="image image-thumbnail{{#isVideo}} video video-thumbnail small{{/isVideo}}"
+					   title="{{alt}}">
+						<img src="{{thumbnail}}" class="pi-image-thumbnail" alt="{{alt}}" width="{{{width}}}" height="{{{height}}}"
+							 data-{{media-type}}-key="{{name}}" data-{{media-type}}-name="{{name}}"/>
+						{{#isVideo}}
+							{{#duration}}
+								<span class="duration" itemprop="duration">{{duration}}</span>
+							{{/duration}}
+							<span class="play-circle"></span>
+						{{/isVideo}}
+						{{#caption}}<figcaption class="pi-item-spacing pi-caption">{{{caption}}}</figcaption>{{/caption}}
+					</a>
+				</figure>
+			{{/images}}
 		</div>
-	{{/images}}
-	<div class="navigation">
-		<a class="prev"><</a>
-		<a class="next">></a>
+		<span class="arrow prev"></span>
+		<span class="arrow next"></span>
 	</div>
+	<ul class="pi-pager">
+	</ul>
 </div>
